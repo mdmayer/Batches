@@ -1,0 +1,15 @@
+Query and disable computer - tested from Mickeymouse
+
+1.  query computer DN: dsquery computer -name %%computer%%
+	i.e. dsquery computer -name UHS61916
+    result: "CN=UHS61916,OU=District 067,OU=UHS Computers,DC=int,DC=uhs,DC=com"
+
+
+
+2.  disable computer account: dsmod computer %%info from result%% -disabled yes
+	i.e. dsmod computer "CN=UHS61916,OU=District 067,OU=UHS Computers,DC=int,DC=uhs,DC=com" -disabled yes
+
+
+
+3.  re-enable via cli: dsmod computer %%info from result%% -disabled no
+	i.e. dsmod computer "CN=UHS61916,OU=District 067,OU=UHS Computers,DC=int,DC=uhs,DC=com" -disabled no	
